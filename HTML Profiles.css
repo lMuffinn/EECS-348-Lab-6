@@ -1,0 +1,29 @@
+*{
+    background-color: rgb(21, 21, 24);
+    color: white;
+}
+
+img {
+    width: 300px;
+    float: inline-end;
+    border: 3px solid darkblue;
+    margin: 20px;
+}
+
+.title{
+    text-align: center;
+    background-color: darkblue;
+}
+
+.words{
+    margin: 20px;
+    border-top: 3px solid darkblue;
+    border-bottom: 3px solid darkblue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.video{
+    margin: 20px;
+}
