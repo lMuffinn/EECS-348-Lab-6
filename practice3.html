@@ -1,0 +1,41 @@
+<!--
+Javascript Password Verification
+Description: Allow the user to verify a password
+Input: Password
+Output: Whether or not the password is valid
+Author: Matthew Eagleman
+Date: 10-25-2024
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Practice 3</title>
+    </head>
+    <body>
+        <!--Creates the page-->
+        <h1>Javascript Password Verification</h1>
+        <form action="">
+            Password: <input type="text" name="pass1"><br>
+            Re-enter password: <input type="text" name="pass2"><br>
+            <br>
+            <button type="submit">Validate your password</button>
+        </form>
+        <script>
+            let form = document.querySelector("form") //Gets the form
+            form.addEventListener("submit", event => {
+                //adds an event listener to intercept the submit event
+                if(form.elements.pass1.value != form.elements.pass2.value){
+                    alert("Passwords do not match!") //Alerts the user if the passwords don't match
+                }
+                else if(form.elements.pass1.value.length < 8){
+                    alert("Password must be 8 characters or longer.") //Alerts the user if their password is not long enough
+                }
+                else{
+                    alert("Everything looks good!") //Confirms that the password is correct
+                }
+                event.preventDefault() //Precents the default action from occuring
+            })
+        </script>
+    </body>
+</html>
