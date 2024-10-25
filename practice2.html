@@ -1,0 +1,45 @@
+<!--
+CSS Font Control
+Description: Allow the user to change the values of a paragraph
+Input: Various rbg and width values
+Output: An editable paragraph element
+Author: Matthew Eagleman
+Date: 10-25-2024
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Practice 2</title>
+        <link rel="stylesheet" type="text/css" href="practice2.css" /> <!--links the style sheet to the page-->
+    </head>
+    <body>
+        <!--Create the initial page-->
+        <h1>CSS Font Control</h1>
+        <p>You can change the way I look!</p>
+        <form action="">
+            <h2>Border</h2>
+            &nbspR(0-255): <input type="text" name="borR" value="0"> <br>
+            &nbspG(0-255): <input type="text" name="borG" value="0"> <br>
+            &nbspB(0-255): <input type="text" name="borB" value="0"> <br>
+            &nbspWidth: <input type="text" name="width" value="4"> <br>
+            <h2>Background</h2>
+            &nbspR(0-255): <input type="text" name="backR" value="255"> <br>
+            &nbspG(0-255): <input type="text" name="backG" value="255"> <br>
+            &nbspB(0-255): <input type="text" name="backB" value="255"> <br>
+            <br>
+            <button type="submit">Change the color!</button>
+        </form>
+        <script>
+            let para = document.querySelector("p") //Gets the paragraph
+            let form = document.querySelector("form") //Gets the form
+            form.addEventListener("submit", event => {
+                //Adds an event listener that intercepts the submit event from the button, and changes the css values of the paragraph
+                para.style.borderColor = "rgb(" + form.elements.borR.value + " " + form.elements.borG.value + " " + form.elements.borB.value + ")"
+                para.style.borderWidth = form.elements.width.value + "px"
+                para.style.backgroundColor = "rgb(" + form.elements.backR.value + " " + form.elements.backG.value + " " + form.elements.backB.value + ")"
+                event.preventDefault()
+            })
+        </script>
+    </body>
+</html>
